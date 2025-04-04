@@ -1,0 +1,22 @@
+{
+  "name": "jaredgriggs.dev",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@tailwindcss/vite": "^4.1.1",
+    "@typescript-eslint/parser": "^8.29.0",
+    "astro": "^5.5.6",
+    "tailwindcss": "^4.1.1",
+    "typescript": "^5.8.2",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
+  }
+}

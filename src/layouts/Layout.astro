@@ -1,0 +1,28 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+		<title>Jared Griggs - Software Engineer</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet"/>
+    </noscript>
+	</head>
+  <body class="h-full w-full antialiased text-foreground bg-background bg-dots dark">
+		<slot />
+	</body>
+</html>
