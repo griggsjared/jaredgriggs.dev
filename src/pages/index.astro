@@ -3,14 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import Portrait from "../components/Portrait.astro";
 import Title from "src/components/Title.astro";
 import SocialIcons from "src/components/SocialIcons.astro";
+
+type Subject = {
+  name: string;
+  title?: string | undefined;
+  linkedin?: string | undefined;
+  github?: string | undefined;
+};
+
+const subject: Subject = {
+  name: "Jared Griggs",
+  title: "Software Engineer",
+  linkedin: "https://www.linkedin.com/in/jared-griggs-8aa84023",
+  github: "https://github.com/griggsjared",
+};
 ---
 
-<Layout>
+<Layout name={subject.name} title={subject.title}>
   <div class="flex flex-col items-center justify-center h-screen gap-6 p-6">
     <div class="flex flex-col items-center justify-center gap-2">
-      <Portrait/>
-      <Title />
-      <SocialIcons />
+      <Portrait name={subject.name} />
+      <Title name={subject.name} title={subject.title} />
+      <SocialIcons
+        name={subject.name}
+        linkedin={subject.linkedin}
+        github={subject.github}
+      />
     </div>
   </div>
 </Layout>

@@ -1,17 +1,26 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+
+export interface Props {
+  name: string;
+  title?: string | undefined;
+}
+
+const { title, name } = Astro.props;
+
+const nameAndTitle: string = title ? `${name} - ${title}` : name;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Jared Griggs - Software Engineer</title>
-    <meta name="description" content="Jared Griggs - Software Engineer" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+    <title>{nameAndTitle}</title>
+    <meta name="description" content={nameAndTitle} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap"
@@ -19,10 +28,15 @@ import '../styles/global.css'
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet"/>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap"
+        rel="stylesheet"
+      />
     </noscript>
-	</head>
-  <body class="h-full w-full antialiased text-foreground bg-background bg-dots dark">
-		<slot />
-	</body>
+  </head>
+  <body
+    class="h-full w-full antialiased text-foreground bg-background bg-dots dark"
+  >
+    <slot />
+  </body>
 </html>

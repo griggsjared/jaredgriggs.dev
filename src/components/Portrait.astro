@@ -1,13 +1,19 @@
 ---
 import portrait from "../assets/portrait.jpg";
 import { Image } from "astro:assets";
+
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
 ---
 
 <div class="border-6 border-solid border-green overflow-hidden">
   <Image
     src={portrait}
     class="w-full h-full object-cover"
-    alt="Portrait of Jared Griggs"
+    alt={"Portrait of" + name}
     loading="eager"
   />
 </div>

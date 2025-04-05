@@ -1,2 +1,11 @@
-<h1 class="font-bold text-5xl">Jared Griggs</h1>
-<h2 class="font-semibold text-2xl">Software Engineer</h2>
+---
+export interface Props {
+  name: string;
+  title?: string | undefined;
+}
+
+const { title, name } = Astro.props;
+---
+
+<h1 class="font-bold text-5xl">{name}</h1>
+{title ?? <h2 class="font-semibold text-2xl">{title}</h2>}
